@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #2563eb;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn.primary:hover {
+    background: #1d4ed8;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.secondary:hover {
+    background: white;
+    color: #333;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+section:nth-child(even) {
+    background: #f8fafc;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1e293b;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2563eb;
+}
+
+/* Experience & Education */
+.experience-item, .education-item, .research-item {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company, .institution, .publication {
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.duration, .year {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.tech-stack span {
+    background: #e2e8f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skills span {
+    background: #2563eb;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Contact */
+#contact {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    color: white;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.contact-links a:hover {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
