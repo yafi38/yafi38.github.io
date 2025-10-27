@@ -478,3 +478,8 @@ h3 {
         font-size: 0.9rem;
     }
 }
+
+/* Scroll Behavior */
+#about, #education, #experience, #research, #projects, #skills, #contact {
+    scroll-margin-top: 80px;
+}
