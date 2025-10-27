@@ -16,10 +16,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 100) {
-        nav.style.background = 'rgba(255, 255, 255, 0.98)';
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        nav.style.background = 'rgba(26, 26, 26, 0.95)';
+        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
     } else {
-        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        nav.style.background = 'rgba(26, 26, 26, 0.8)';
         nav.style.boxShadow = 'none';
     }
 });
