@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+:root {
+    --nav-height: 80px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -64,10 +68,10 @@ nav {
 
 /* Hero Section */
 #hero {
-    min-height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: center;
-    padding: 100px 0;
+    padding: var(--nav-height) 0 24px 0;
     background: #1A1A1A;
     background-image: radial-gradient(circle at 70% 50%, #2a1f1f 25%, #1A1A1A 40%);
 }
@@ -179,7 +183,7 @@ nav {
     position: relative;
     width: 100%;
     max-width: 500px;
-    height: 600px;
+    height: min(45vh, 420px);
 }
 
 .profile-image {
@@ -499,9 +503,23 @@ h3 {
 
 /* Contact */
 #contact {
-    background: #1A1A1A;
     color: white;
     text-align: center;
+}
+
+/* Make About + Hero fill initial viewport height together */
+#about {
+    height: 30vh;
+    padding: 16px 0 24px 0;
+    display: flex;
+    align-items: center;
+}
+
+#about .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #contact h2 {
@@ -543,6 +561,14 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    #hero {
+        height: 70vh;
+        padding: var(--nav-height) 0 20px 0;
+    }
+    #about {
+        height: 30vh;
+        padding: 16px 0 20px 0;
+    }
     .hero-container {
         grid-template-columns: 1fr;
         padding: 0 30px;
@@ -608,6 +634,14 @@ h3 {
 }
 
 @media (max-width: 480px) {
+    #hero {
+        height: 70vh;
+        padding: var(--nav-height) 0 16px 0;
+    }
+    #about {
+        height: 30vh;
+        padding: 14px 0 16px 0;
+    }
     .nav-menu {
         gap: 1rem;
         font-size: 0.85rem;
@@ -629,5 +663,5 @@ h3 {
 
 /* Scroll Behavior */
 #about, #education, #experience, #research, #resumes, #projects, #skills, #contact {
-    scroll-margin-top: 80px;
+    scroll-margin-top: var(--nav-height);
 }
