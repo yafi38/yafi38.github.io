@@ -427,6 +427,34 @@ h3 {
     margin-top: 2rem;
 }
 
+/* Test Scores */
+#testscores .scores-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 1000px;
+}
+
+#testscores .score-item {
+    background: #2A2A2A;
+    padding: 1.75rem 2rem;
+    border-radius: 8px;
+    border-left: 3px solid #FF715A;
+}
+
+#testscores .score-item h3 {
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+}
+
+#testscores .score-item p {
+    margin: 0;
+    color: #94a3b8;
+}
+
 .project-card {
     background: #2A2A2A;
     padding: 2rem;
@@ -561,6 +589,9 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    #testscores .scores-list {
+        grid-template-columns: 1fr;
+    }
     #hero {
         height: 70vh;
         padding: var(--nav-height) 0 20px 0;
@@ -662,6 +693,6 @@ h3 {
 }
 
 /* Scroll Behavior */
-#about, #education, #experience, #research, #resumes, #projects, #skills, #contact {
+#about, #education, #testscores, #experience, #research, #resumes, #projects, #skills, #contact {
     scroll-margin-top: var(--nav-height);
 }
