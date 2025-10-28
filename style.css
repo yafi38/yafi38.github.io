@@ -286,6 +286,135 @@ h3 {
     text-decoration: underline;
 }
 
+/* Section Note */
+.section-note {
+    text-align: center;
+    color: #94a3b8;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Resumes & Documents */
+.resumes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.resume-card {
+    background: #2A2A2A;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.resume-card:hover {
+    border-color: #FF715A;
+    transform: translateY(-5px);
+}
+
+.resume-card h3 {
+    color: #FF715A;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.resume-card p {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.resume-card .btn {
+    margin-top: 1rem;
+}
+
+.resume-card h4 {
+    color: #FF715A;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Subsections */
+.subsection {
+    margin: 3rem 0;
+}
+
+.subsection-title {
+    color: #ffffff;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    border-bottom: 2px solid #FF715A;
+    padding-bottom: 0.5rem;
+}
+
+/* Document List */
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.document-item {
+    background: #2A2A2A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s;
+}
+
+.document-item:hover {
+    border-color: #FF715A;
+    transform: translateX(5px);
+}
+
+.document-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.document-content {
+    flex: 1;
+}
+
+.document-content h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.document-content p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.document-link {
+    color: #FF715A;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid #FF715A;
+    border-radius: 5px;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.document-link:hover {
+    background: #FF715A;
+    color: white;
+}
+
 /* Projects */
 .projects-grid {
     display: grid;
@@ -457,6 +586,25 @@ h3 {
         flex-direction: column;
         gap: 1rem;
     }
+    
+    .document-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .document-content {
+        text-align: center;
+    }
+    
+    .document-link {
+        width: 100%;
+        display: block;
+    }
+    
+    .subsection-title {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -480,6 +628,6 @@ h3 {
 }
 
 /* Scroll Behavior */
-#about, #education, #experience, #research, #projects, #skills, #contact {
+#about, #education, #experience, #research, #resumes, #projects, #skills, #contact {
     scroll-margin-top: 80px;
 }
