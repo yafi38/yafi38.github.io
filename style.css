@@ -30,6 +30,7 @@ nav {
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1.5rem 0;
+    height: var(--nav-height);
 }
 
 .nav-container {
@@ -182,8 +183,8 @@ nav {
 .image-container {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    height: min(45vh, 420px);
+    max-width: 450px;
+    /* height: min(45vh, 420px); */
 }
 
 .profile-image {
@@ -198,8 +199,8 @@ nav {
 
 .arc-graphic {
     position: absolute;
-    top: -50px;
-    right: -100px;
+    top: 100px;
+    right: 50px;
     width: 400px;
     height: 400px;
     border: 8px solid #FF715A;
@@ -223,14 +224,14 @@ nav {
 }
 
 .chevron-1 {
-    top: 15%;
-    left: 10%;
+    top: 20%;
+    right: 15%;
     transform: rotate(-45deg);
 }
 
 .chevron-2 {
     bottom: 10%;
-    right: 5%;
+    left: 5%;
     transform: rotate(45deg);
 }
 
@@ -593,7 +594,7 @@ h3 {
         grid-template-columns: 1fr;
     }
     #hero {
-        height: 70vh;
+        min-height: 100vh;
         padding: var(--nav-height) 0 20px 0;
     }
     #about {
@@ -604,6 +605,7 @@ h3 {
         grid-template-columns: 1fr;
         padding: 0 30px;
         gap: 40px;
+        height: 100%;
     }
     
     .nav-container {
@@ -613,6 +615,10 @@ h3 {
     .nav-menu {
         gap: 1.5rem;
         font-size: 0.9rem;
+    }
+
+    .logo {
+        display: none;
     }
     
     .title {
