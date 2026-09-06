@@ -1,58 +1,85 @@
-// Years of experience, counted from 2022
+// Dynamic year values
+const startYear = 2022;
+const now = new Date().getFullYear();
+
 const yearsEl = document.getElementById('years');
 if (yearsEl) {
-    yearsEl.textContent = new Date().getFullYear() - 2022;
+    yearsEl.textContent = now - startYear;
 }
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+const footerYearEl = document.getElementById('footer-year');
+if (footerYearEl) {
+    footerYearEl.textContent = now;
+}
+
+// Smooth scrolling for in-page navigation links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
 
-// Add scroll effect to navigation
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 100) {
-        nav.style.background = 'rgba(26, 26, 26, 0.95)';
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
-    } else {
-        nav.style.background = 'rgba(26, 26, 26, 0.8)';
-        nav.style.boxShadow = 'none';
+// Condense the navigation bar once the page is scrolled
+const nav = document.querySelector('nav');
+const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+};
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// Highlight the navigation link for the section currently in view
+const navLinks = new Map();
+document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
+    navLinks.set(link.getAttribute('href').slice(1), link);
+});
+
+const setActiveLink = (id) => {
+    navLinks.forEach((link, key) => {
+        link.classList.toggle('active', key === id);
+    });
+};
+
+const spy = new IntersectionObserver(
+    (entries) => {
+        entries
+            .filter((entry) => entry.isIntersecting)
+            .forEach((entry) => setActiveLink(entry.target.id));
+    },
+    { rootMargin: '-45% 0px -50% 0px' }
+);
+
+navLinks.forEach((link, id) => {
+    const section = document.getElementById(id);
+    if (section) {
+        spy.observe(section);
     }
 });
 
-// Simple fade-in animation for sections
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// Reveal sections as they scroll into view
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sections = document.querySelectorAll('section:not(#hero)');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+if (prefersReducedMotion) {
+    sections.forEach((section) => section.classList.add('revealed'));
+} else {
+    const reveal = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    sections.forEach((section) => {
+        section.classList.add('reveal');
+        reveal.observe(section);
     });
-}, observerOptions);
-
-// Apply animation to sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
-
-// Hero section is always visible
-document.querySelector('#hero').style.opacity = '1';
-document.querySelector('#hero').style.transform = 'translateY(0)';
+}
