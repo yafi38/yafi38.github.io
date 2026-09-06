@@ -132,6 +132,12 @@ nav {
     line-height: 1.1;
 }
 
+.hero-location {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
 .hero-buttons {
     display: flex;
     gap: 15px;
