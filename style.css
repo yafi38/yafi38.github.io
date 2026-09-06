@@ -333,6 +333,33 @@ h3 {
     color: #94a3b8;
 }
 
+/* Awards */
+.awards-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.award-item {
+    background: #2A2A2A;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border-left: 3px solid #FF715A;
+}
+
+.award-item h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.award-item p {
+    margin: 0;
+    color: #94a3b8;
+}
+
 .project-card {
     background: #2A2A2A;
     padding: 2rem;
@@ -557,6 +584,6 @@ h3 {
 }
 
 /* Scroll Behavior */
-#about, #education, #testscores, #experience, #research, #projects, #skills, #contact {
+#about, #education, #testscores, #experience, #research, #projects, #skills, #awards, #contact {
     scroll-margin-top: var(--nav-height);
 }
