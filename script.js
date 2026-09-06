@@ -31,6 +31,24 @@ const onScroll = () => {
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
+// Mobile navigation menu toggle
+const navToggle = document.querySelector('.nav-toggle');
+if (navToggle) {
+    const closeMenu = () => {
+        nav.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    nav.querySelectorAll('.nav-menu a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
 // Highlight the navigation link for the section currently in view
 const navLinks = new Map();
 document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
