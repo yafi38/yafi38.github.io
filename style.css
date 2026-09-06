@@ -256,23 +256,64 @@ nav.nav-open .nav-toggle span:nth-child(3) {
 
 /* Hero image */
 .hero-right {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 420px;
 }
 
 .image-container {
+    position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 430px;
 }
 
 .profile-image {
+    position: relative;
+    z-index: 3;
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    filter: grayscale(15%);
+    border-radius: 8px;
+    filter: grayscale(18%);
+}
+
+.arc-graphic {
+    position: absolute;
+    top: -40px;
+    right: -30px;
+    width: 380px;
+    height: 380px;
+    border: 8px solid var(--accent);
+    border-radius: 50%;
+    border-right: none;
+    border-bottom: none;
+    opacity: 0.55;
+    z-index: 1;
+}
+
+.chevron {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 44px solid var(--accent);
+    opacity: 0.35;
+    z-index: 4;
+}
+
+.chevron-1 {
+    top: 12%;
+    right: 8%;
+    transform: rotate(-45deg);
+}
+
+.chevron-2 {
+    bottom: 6%;
+    left: 2%;
+    transform: rotate(45deg);
 }
 
 /* Sections */
@@ -437,7 +478,7 @@ section:nth-of-type(even) .education-item {
     color: var(--accent-hover);
 }
 
-/* Skills: light cards */
+/* Skills */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -446,18 +487,24 @@ section:nth-of-type(even) .education-item {
 }
 
 .skill-category {
-    background: var(--bg-alt);
+    background: var(--surface);
     padding: 1.6rem;
     border-radius: var(--radius);
     border: 1px solid var(--border-soft);
+    border-top: 3px solid var(--accent);
+    transition: transform 0.2s, border-color 0.25s;
 }
 
-section:nth-of-type(even) .skill-category {
-    background: var(--bg);
+.skill-category:hover {
+    transform: translateY(-4px);
 }
 
 .skill-category h3 {
     font-size: var(--step-2);
+    color: var(--accent);
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .skills {
@@ -468,12 +515,17 @@ section:nth-of-type(even) .skill-category {
 }
 
 .skills span {
-    background: transparent;
-    color: var(--text-muted);
-    border: 1px solid var(--border);
+    background: var(--accent-weak);
+    color: var(--text);
+    border: 1px solid var(--accent-line);
     padding: 5px 12px;
     border-radius: 999px;
     font-size: var(--step-0);
+    transition: background 0.2s;
+}
+
+.skill-category:hover .skills span {
+    background: rgba(255, 122, 92, 0.18);
 }
 
 /* Awards: light rows */
@@ -595,10 +647,16 @@ section:nth-of-type(even) .award-item {
 
     .hero-right {
         order: -1;
+        min-height: 0;
     }
 
     .image-container {
         max-width: 260px;
+    }
+
+    .arc-graphic,
+    .chevron {
+        display: none;
     }
 }
 
