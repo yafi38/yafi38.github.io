@@ -33,10 +33,10 @@
                 <h1 class="greeting">Hello<span class="dot">,</span> I'm Yafi<span class="dot">.</span></h1>
                 <div class="name-intro">
                 </div>
-                <h3 class="title">Software Developer</h3>
+                <h3 class="title">Software Engineer &middot; Bioinformatics Researcher</h3>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn primary">Get in touch</a>
-                    <a href="#resumes" class="btn secondary">My resume</a>
+                    <a href="#projects" class="btn secondary">See my work</a>
                 </div>
             </div>
             <div class="hero-right">
@@ -53,7 +53,7 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a software engineer with <script>document.write(new Date().getFullYear() - 2022);</script>+ years of experience in the field. I have experience in .Net, Angular, and agentic AI development using LangChain. I have a passion for building scalable solutions and conducting impactful research.</p>
+            <p>I am a software engineer with <span id="years"></span>+ years of experience in the field. I have experience in .Net, Angular, and agentic AI development using LangChain. I have a passion for building scalable solutions and conducting impactful research.</p>
         </div>
     </section>
 
@@ -105,9 +105,9 @@
             </div>
             <div class="research-item">
                 <h3>scGIST: Gene Panel Design for Spatial Transcriptomics with Prioritized Gene Sets</h3>
-                <p class="publication">Published in <em>Genome Biology</em> on February 2024</p>
+                <p class="publication">Published in <em>Genome Biology</em> in February 2024</p>
                 
-                <p>The initial goal of the project was to modify a simple linear programming algorithm to include prioritized genes which we achieved in a short period of time. After that, we challenged ourselved to achieve even better results. Through several iterations and experiments, we developed <strong>scGIST</strong>.</p>
+                <p>The initial goal of the project was to modify a simple linear programming algorithm to include prioritized genes, which we achieved in a short period of time. After that, we challenged ourselves to achieve even better results. Through several iterations and experiments, we developed <strong>scGIST</strong>.</p>
 
                 <ul>
                     <li> Developed a deep-learning tool for designing single-cell spatial transcriptomics (sc-ST) gene panels.</li>
@@ -129,42 +129,33 @@
         <div class="container">
             <h2>Experience</h2>
             <div class="experience-item">
-                <h3>Software Development Engineer II</h3>
-                <p class="company">IQVIA</p>
-                <p class="duration">October 2024 - Present</p>
+                <h3>IQVIA</h3>
+                <p class="company">Software Development Engineer III (May 2026 - Present) &middot; II (Oct 2024 - Apr 2026) &middot; I (Sep 2023 - Sep 2024)</p>
+                <p class="duration">Dhaka, Bangladesh</p>
                 <ul>
-                    <li> Team lead of an AI Assistant team, overseeing design, development, and deployment process.</li>
-                    <li>Implement agentic AI solutions using LangGraph and LangChain, focusing on modularity and scalability.</li>
-                    <li>Redesigned agent graph to reduce latency by 15% and token usage by 10%.</li>
-                    <li>Monitor and troubleshoot issues in LangSmith to maintain reliability.</li>
-                    <li>Build and deploy agent server in Kubernetes hosted in AWS.</li>
-                    <li>Winner of the <strong>IQVIA Platinum Award</strong> for managing major change requests in the Agent Server.</li>
+                    <li>Lead an AI Assistant team, owning architecture, delivery, and production operation of agentic applications for global pharmaceutical clients.</li>
+                    <li>Build AI agents with LangGraph and LangChain, using tool calling, state management, and human-in-the-loop approval.</li>
+                    <li>Developed MCP servers exposing data and analytics tools to agents, letting users run analysis conversationally.</li>
+                    <li>Implemented retrieval-augmented generation over enterprise datasets with AWS Bedrock, GraphRAG, and Snowflake Cortex Search, grounding responses in governed, access-controlled data.</li>
+                    <li>Redesigned the agent graph, cutting end-to-end latency by 15% and token usage by 10%.</li>
+                    <li>Created a monorepo and introduced spec-driven development, reducing development time by 40%.</li>
+                    <li>Deploy and operate agent servers on Kubernetes (AWS EKS) with GitLab CI/CD, and debug agent traces in LangSmith.</li>
+                    <li>Previously led a .NET backend team, designing microservices and REST APIs on .NET Core and SQL Server with RabbitMQ for asynchronous messaging.</li>
+                    <li>Reduced export-service memory usage by 85% and improved several API response times by up to 10x.</li>
+                    <li>Won the <strong>IQVIA Platinum Award</strong> for Agent Server upgrades and the <strong>Gold Award</strong> for backend performance optimization.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>Software Development Engineer I</h3>
-                <p class="company">IQVIA</p>
-                <p class="duration">September 2023 - September 2024</p>
+                <h3>Enosis Solutions</h3>
+                <p class="company">Software Engineer II (May 2023 - August 2023) &middot; I (May 2022 - May 2023)</p>
+                <p class="duration">Dhaka, Bangladesh</p>
                 <ul>
-                    <li>Led .NET backend development team.</li>
-                    <li>Designed and implemented scalable microservices and API-driven solutions.</li>
-                    <li>Optimized the PowerPoint export feature, reducing memory usage by 85%.</li>
-                    <li>Delivered performance improvements of APIs with response time gains of up to 10x.</li>
-                    <li>Resolved production issues with SREs and maintained dev Kubernetes cluster hosted in AWS.</li>
-                    <li>Received the <strong>IQVIA Gold Award</strong> for performance optimization.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Software Engineer</h3>
-                <p class="company">Enosis Solutions</p>
-                <p class="duration">May 2022 - August 2023</p>
-                <ul>
-                    <li>Developed a web application using .NET and Angular, following the Kanban methodology.</li>
+                    <li>Developed a CRM web application in .NET Core and Angular for advertising campaigns across broadcast and digital channels, following the Kanban methodology.</li>
                     <li>Automated performance metrics retrieval from the Google Ad Manager API using timer-triggered Azure Functions.</li>
                     <li>Optimized complex queries in Microsoft SQL Server, significantly improving data retrieval performance.</li>
-                    <li>Created automated statistics reports and scheduled email delivery using timer-triggered Azure functions.</li>
-                    <li>Migrated legacy .NET MVC project to .NET Core.</li>
-                </ul>                
+                    <li>Created automated statistics reports with scheduled email delivery to subscribed clients.</li>
+                    <li>Migrated a legacy .NET MVC project to .NET Core.</li>
+                </ul>
             </div>
         </div>
     </section>

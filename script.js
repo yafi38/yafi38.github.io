@@ -1,3 +1,9 @@
+// Years of experience, counted from 2022
+const yearsEl = document.getElementById('years');
+if (yearsEl) {
+    yearsEl.textContent = new Date().getFullYear() - 2022;
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
