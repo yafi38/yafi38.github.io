@@ -284,12 +284,14 @@ nav.nav-open .nav-toggle span:nth-child(3) {
 
 .arc-graphic {
     position: absolute;
-    top: 40%;
+    top: 38%;
     left: 50%;
-    width: 360px;
-    height: 360px;
+    width: 380px;
+    height: 380px;
     border: 7px solid var(--accent);
     border-radius: 50%;
+    border-right: none;
+    border-bottom: none;
     opacity: 0.5;
     transform: translate(-50%, -50%);
     z-index: 1;
